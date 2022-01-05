@@ -1,38 +1,20 @@
-  name: send email to the teacher
-  # This workflow is triggered on pushes to the repository.
-  on: [push]
+name: 'Send emailto the teacher'
 
-  jobs:
-    build:
-      name: Greeting
-      # This job runs on Linux
-      runs-on: ubuntu-latest
-      steps:
-      - name: Send mail
-  uses: dawidd6/action-send-mail@v3
-  with:
-    # Required mail server address:
-    server_address: smtp.126.com
-    # Required mail server port:
-    server_port: 465
-    # Optional (recommended): mail server username:
-    username: ${{secrets.MAIL_USERNAME}}
-    # Optional (recommended) mail server password:
-    password: ${{secrets.MAIL_PASSWORD}}
-    # Required mail subject:
-    subject: 林舒仪  Github Actions job result
-    # Required recipients' addresses:
-    to: a18148540610@126.com
-    # Required sender full name (address can be skipped):
-    from: Luke Skywalker # <user@example.com>
-    # Optional whether this connection use TLS (default is true if server_port is 465)
-    secure: true
-    # Optional plain body:
-    body: Build job of ${{github.repository}} completed successfully!
-    # Optional unsigned/invalid certificates allowance:
-    ignore_cert: true
-    # Optional converting Markdown to HTML (set content_type to text/html too):
-    convert_markdown: true
-    # Optional attachments:
-    attachments: attachments.zip,git.diff,./dist/static/*.js
-   
+on:
+  push:
+jobs:
+  bot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Send mail'
+        uses: dawidd6/action-send-mail@master
+        with:
+          server_address: smtp.163.com
+          server_port: 465
+          username: ${{ secrets.MAIL_USERNAME }}
+          password: ${{ secrets.MAIL_PASSWORD }}
+          subject: Shanghai Weather Report (${{env.REPORT_DATE}})
+          body: 网页1.html
+          to: a18148540610@126.com
+          from: 林舒仪的GitHub Actions
+          content_type: text/html
