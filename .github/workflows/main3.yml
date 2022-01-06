@@ -9,12 +9,12 @@ jobs:
       - name: 'Send mail'
         uses: dawidd6/action-send-mail@master
         with:
-          server_address: smtp.163.com
+          server_address: smtp.qq.com
           server_port: 465
           username: ${{ secrets.MAIL_USERNAME }}
           password: ${{ secrets.MAIL_PASSWORD }}
           subject: 林舒仪的GitHub Actions
           body: ${{github.repository}} 的构建作业成功完成！
           to: 2044339693@qq.com
-          from: a18148540610@126.com
-          content_type: text/html
+          from: 418008503@qq.com
+          
