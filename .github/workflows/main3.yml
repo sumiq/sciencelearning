@@ -15,6 +15,6 @@ jobs:
           password: ${{ secrets.MAIL_PASSWORD }}
           subject: 林舒仪的GitHub Actions
           body: ${{github.repository}} 的构建作业成功完成！
-          to: 419352456@qq.com
+          to: 2044339693@qq.com
           from: a18148540610@126.com
           content_type: text/html
