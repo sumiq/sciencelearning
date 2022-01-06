@@ -3,9 +3,16 @@ name: 'Send emailto the teacher'
 on:
   push:
 jobs:
-  bot:
+  build：
     runs-on: ubuntu-latest
     steps:
+      -name:'Checkout codes'
+       uses:  action/checkout@v1
+      -name:Get Git log
+        id: git log
+        uses:Edisonboy/latest-git-log-action@main
+        with:
+        tag:origin/master
       - name: 'Send mail'
         uses: dawidd6/action-send-mail@master
         with:
@@ -14,7 +21,5 @@ jobs:
           username: ${{ secrets.MAIL_USERNAME }}
           password: ${{ secrets.MAIL_PASSWORD }}
           subject: 林舒仪的GitHub Actions
-          body: ${{github.repository}} 的构建作业成功完成！
-          to: 2044339693@qq.com
-          from: 418008503@qq.com
-          
+          body: file://README.md
+          content_type:text/plan
