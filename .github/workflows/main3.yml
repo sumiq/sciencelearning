@@ -9,11 +9,6 @@ jobs:
   steps:
     - name: Checkout
       uses: actions/checkout@v2
-    - name: Get Git Log
-      id: git_log
-      uses: Edisonboy/lastest-git-log-action@main
-      with:
-        tag: origin / main
     - name: 'Send mail'
       uses: dawidd6/action-send-mail@master
       with:
