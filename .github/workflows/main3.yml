@@ -15,7 +15,7 @@ jobs:
         server_address: smtp.163.com
         server_port: 465
         username: ${{ secrets.MAIL_USERNAME }}
-        password: ${{ secrets.MAIL_PASSWORD }}
+        password: SUSDLWJFZZXHQFCJ
         subject: 林舒仪
         body: 林舒仪的action记录
         to: zwzvv@163.com
