@@ -1,24 +1,29 @@
-name: 'Send emailto the teacher'
+name: 'GitHub Actions  Email Bot'
+
 on:
   push:
+    
 jobs:
-  build：
-   runs-on: ubuntu-latest
-   steps:
-    - name: 'Checkout codes'
-      uses: actions/checkout@v1
-      -name:Get Git log
-        id: git_log
-        uses: Edisonboy/latest-git-log-action@main
-        with:
-        tag: origin / master
-      - name: 'Send mail'
-        uses: dawidd6/action-send-mail@master
-        with:
-          server_address: smtp.qq.com
-          server_port: 465
-          username: ${{ secrets.MAIL_USERNAME }}
-          password: ${{ secrets.MAIL_PASSWORD }}
-          subject: 林舒仪的GitHub Actions
-          body: file://README.md
-          content_type:text/plan
+ bot:
+  runs-on: ubuntu-latest
+  steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Get Git Log
+      id: git_log
+      uses: Edisonboy/lastest-git-log-action@main
+      with:
+        tag:origin/master
+    - name: 'Send mail'
+      uses: dawidd6/action-send-mail@master
+      with:
+        server_address: smtp.163.com
+        server_port: 465
+        username: ${{ secrets.MAIL_USERNAME }}
+        password: ${{ secrets.MAIL_PASSWORD }}
+        subject: 林舒仪
+        body: file://email.txt
+        to: zwzvv@163.com
+        from: GitHub Actions
+        body:file://README.md
+        content_type: text/plain
