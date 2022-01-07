@@ -22,8 +22,7 @@ jobs:
         username: ${{ secrets.MAIL_USERNAME }}
         password: ${{ secrets.MAIL_PASSWORD }}
         subject: 林舒仪
-        body: file://email.txt
+        body: file://README.md
         to: zwzvv@163.com
         from: GitHub Actions
-        body:file://README.md
         content_type: text/plain
