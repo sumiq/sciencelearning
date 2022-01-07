@@ -17,7 +17,7 @@ jobs:
         username: ${{ secrets.MAIL_USERNAME }}
         password: ${{ secrets.MAIL_PASSWORD }}
         subject: 林舒仪
-        body: file://README.md
+        body: 林舒仪的action记录
         to: zwzvv@163.com
         from: GitHub Actions
         content_type: text/plain
