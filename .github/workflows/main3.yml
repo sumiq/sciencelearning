@@ -1,18 +1,17 @@
 name: 'Send emailto the teacher'
-
 on:
   push:
 jobs:
   build：
-    runs-on: ubuntu-latest
-    steps:
-      -name:'Checkout codes'
-       uses:  action/checkout@v1
+   runs-on: ubuntu-latest
+   steps:
+    - name: 'Checkout codes'
+      uses: actions/checkout@v1
       -name:Get Git log
-        id: git log
-        uses:Edisonboy/latest-git-log-action@main
+        id: git_log
+        uses: Edisonboy/latest-git-log-action@main
         with:
-        tag:origin/master
+        tag: origin / master
       - name: 'Send mail'
         uses: dawidd6/action-send-mail@master
         with:
